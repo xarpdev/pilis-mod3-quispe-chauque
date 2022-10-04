@@ -1,5 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom'
+import Home from './routes/Home/Home';
+import Navigation from './routes/Navigation/Navigation';
+import Add from './routes/Add/Add';
 
 
 function App() {

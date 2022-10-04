@@ -1,14 +1,17 @@
 import './Add.css'
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
+import { WeatherContext } from '../../context/WeatherContext';
 
 const Add = () => {
+    const { setCurrentWeather } = useContext(WeatherContext)
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = (data) => {
         localStorage.setItem('currentUser', JSON.stringify(data))
-        setCurrentUser(data)
+        setCurrentWeather(data)
         navigate('/')
     };
 

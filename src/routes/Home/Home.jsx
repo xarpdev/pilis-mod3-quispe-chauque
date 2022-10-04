@@ -1,4 +1,5 @@
 import './Home.css';
+import WeatherList from '../../components/WeatherList';
 
 const Home = () => {
     return (
