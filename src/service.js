@@ -1,8 +1,8 @@
 /* Direcciones de las APIs de Open-Meteo. */
-// Variables: Latitud y Longitud.
 const WEATHER_FORECAST = `https://api.open-meteo.com/v1/forecast?current_weather=true&latitude=${lat}&longitude=${lon}&timezone=America/Argentina/Jujuy`;
-// Variable: Nombre de Ciudad
+// Variables: Latitud y Longitud.
 const GEOCODING = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&language=es&count=1`;
+// Variable: Nombre de Ciudad
 
 /* Localizar información con Weather Forecast API. */
 export const getWeather = async () => {
