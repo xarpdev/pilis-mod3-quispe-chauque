@@ -6,7 +6,7 @@ const Navigation = () => {
         <>
             <div className='navigation'>
                 <div className='nav-title'>
-                    <h1>Júpiter App</h1>
+                    <h1>Luppiter Pluvius</h1>
                 </div>
                 <div className='nav-links-container'>
                     <Link className='nav-link' to='/'>
