@@ -5,7 +5,7 @@ const GEOCODING = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&l
 // Variable: Nombre de Ciudad
 
 /* Localizar información con Weather Forecast API. */
-export const getWeather = async () => {
+export const getDataWeather = async () => {
     try {
         const response = await fetch(WEATHER_FORECAST);
         return response.json();
