@@ -11,16 +11,6 @@ const WeatherCreation = () => {
     const { dataWeather, setDataWeather } = useContext(DataWeatherContext)
     const navigate = useNavigate();
 
-    useEffect(() => {
-        getDataWeather()
-            .then((data) => setDataWeather(data))
-            .catch((err) => console.log(err));
-        
-        getGeocoding()
-            .then((data) => setDataWeather(data))
-            .catch((err) => console.log(err));
-    }, []);
-
     // Establecer Formulario y Valores por Defecto
     const {
         register,
@@ -34,18 +24,31 @@ const WeatherCreation = () => {
         }
     });
 
-    // Enviar datos del Formulario a Home como weatherNew
-    const onSubmit = (data) => {
-        console.log(data);
+    // Procesos con Datos del Formulario.
+    const onSubmit = (data0) => {
+        // Ver Datos Subidos del Formulario
+        console.log(data0);
+
+        // Obtener Datos Climáticos
+        getDataWeather(data0.lat, data0.lon)
+            .then((data1) => setDataWeather(data1))
+            .catch((err) => console.log(err));
+        
+        // Obtener Dato Geográficos
+        getGeocoding(data0.city)
+            .then((data2) => setDataWeather(data2))
+            .catch((err) => console.log(err));
+
+        // Crear Nuevo Weather
         const weatherNew = {
             id: dataWeather.length + 1,
-            city: data.results[0].name,
-            country: data.results[0].country,
-            c_code: data.results[0].country_code,
-            lat: data.latitude,
-            lon: data.longitude,
-            temp: data.current_weather.temperature,
-            wind: data.current_weather.windspeed,
+            city: data2.results[0].name,
+            country: data2.results[0].country,
+            c_code: data2.results[0].country_code,
+            lat: data1.latitude,
+            lon: data1.longitude,
+            temp: data1.current_weather.temperature,
+            wind: data1.current_weather.windspeed
         }
         
         setDataWeather([...dataWeather, weatherNew])
