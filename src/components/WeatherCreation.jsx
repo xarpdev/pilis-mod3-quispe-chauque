@@ -1,5 +1,5 @@
 import './WeatherCreation.css';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import { getDataWeather, getGeocoding } from '../service';
@@ -30,13 +30,13 @@ const WeatherCreation = () => {
         console.log(data0);
 
         // Obtener Datos Climáticos
-        getDataWeather(data0.lat, data0.lon)
-            .then((data1) => setDataWeather(data1))
+        let data1 = getDataWeather(data0.lat, data0.lon)
+            .then((data) => setDataWeather(data))
             .catch((err) => console.log(err));
         
         // Obtener Dato Geográficos
-        getGeocoding(data0.city)
-            .then((data2) => setDataWeather(data2))
+        let data2 = getGeocoding(data0.city)
+            .then((data) => setDataWeather(data))
             .catch((err) => console.log(err));
 
         // Crear Nuevo Weather
