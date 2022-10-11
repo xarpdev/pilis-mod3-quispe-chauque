@@ -2,6 +2,8 @@
 
 ***WebApp de Clima hecho en ReactJS con Open-Meteo API***
 
+![UI Design - Luppiter Pluvius](ui_design.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
